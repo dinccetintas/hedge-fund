@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.python-version
+
+# Env / secrets
+.env
+.env.local
+*.key
+
+# Data / caches (point-in-time cache is regenerable; keep store/ committed though)
+.cache/
+data_cache/
+*.sqlite-wal
+*.sqlite-shm
+
+# Node / Next.js (web/)
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
