@@ -1,37 +1,51 @@
 """The daily run — wires the funnel end to end.
 
-Phase 0 ships the skeleton: the control flow and stage boundaries are defined so Phases 1–3 can
-fill each stage in without re-architecting. Calling it today raises NotImplementedError at the
-first unimplemented stage (loud failure > silent stub).
+Phase 1 implements the Stage-1 path: build the universe, run the scout swarm, persist the
+candidate list. Stages 2–7 (quality → … → synthesis) arrive in Phase 2; calling `run_daily`
+raises NotImplementedError after sourcing until they land.
 """
 
 from __future__ import annotations
 
+import logging
 from datetime import date
 
-from ..schemas import Briefing
+from ..data.bigdata_client import BigdataClient
+from ..data.fmp_client import FMPClient
+from ..schemas import Briefing, Candidate
+from ..scouts.aggregate import source_candidates
+from ..scouts.base import ScoutContext
+from ..store import db
+from ..universe.build import build_universe
+
+log = logging.getLogger(__name__)
+
+
+async def source_stage1(
+    run_date: date | None = None, *, enrich_cap: int = 50, per_scout_limit: int = 25
+) -> tuple[str, list[Candidate]]:
+    """Stage 1 only: universe → scout swarm → persisted candidates. Returns (run_id, candidates)."""
+    run_date = run_date or date.today()
+    async with FMPClient() as fmp:
+        universe = await build_universe(fmp, as_of=run_date)
+        ctx = ScoutContext(
+            fmp=fmp,
+            universe=universe,
+            as_of=run_date,
+            bigdata=BigdataClient(),
+            enrich_cap=enrich_cap,
+        )
+        candidates = await source_candidates(ctx, per_scout_limit=per_scout_limit)
+
+    run_id = db.save_candidates(candidates, run_date=run_date, stage="stage1")
+    log.info("Stage 1 complete: %d candidates (run_id=%s)", len(candidates), run_id)
+    return run_id, candidates
 
 
 async def run_daily(run_date: date | None = None) -> Briefing:
-    """Execute one full research pass and return the morning Briefing.
-
-    Pipeline (see METHODOLOGY §3):
-        candidates = await source_all_scouts(as_of)        # Stage 1
-        for c in candidates:                               # Stages 2–6
-            quality   = await QualityAgent().run(c, as_of)
-            if quality.quality_score < MIN_QUALITY_SCORE: continue
-            valuation = await ValuationAgent().run(c, quality, as_of)
-            bear      = await RedTeamAgent().run(c, quality, valuation, as_of)
-            edge      = await EdgeGateAgent().run(c, bear, as_of)
-            if not edge.passes: continue
-            sizing    = await RiskPMAgent().run(c, quality, valuation, bear, as_of)
-            ideas.append(Idea(...))
-        briefing = rank_and_synthesize(ideas)              # Stage 7
-        store.save_run(briefing); report.write_markdown(briefing)
-        watchlist.update(briefing)
-        return briefing
-    """
+    """Execute the full funnel. Stages 2–7 are wired in Phase 2."""
     run_date = run_date or date.today()
+    await source_stage1(run_date)
     raise NotImplementedError(
-        "The funnel is scaffolded but not yet wired — see Phases 1–3 in docs/METHODOLOGY.md."
+        "Stages 2–7 (quality → … → synthesis) are wired in Phase 2 — see docs/METHODOLOGY.md."
     )

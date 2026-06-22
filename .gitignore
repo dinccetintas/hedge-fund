@@ -14,9 +14,11 @@ venv/
 .env.local
 *.key
 
-# Data / caches (point-in-time cache is regenerable; keep store/ committed though)
+# Data / caches (point-in-time cache is regenerable; keep store/runs JSON committed though)
 .cache/
 data_cache/
+# The SQLite index is a regenerable view over the git-tracked per-run JSON; don't commit the binary.
+store/bear.sqlite
 *.sqlite-wal
 *.sqlite-shm
 

@@ -65,8 +65,8 @@ hedge-fund/
 
 Built in phases (see `docs/METHODOLOGY.md` §6):
 
-- [x] **Phase 0** — Ideation & scaffolding (this commit)
-- [ ] **Phase 1** — Data layer + Scout screens
+- [x] **Phase 0** — Ideation & scaffolding
+- [x] **Phase 1** — Data layer + Scout screens (FMP client, universe builder, 6 scouts, store)
 - [ ] **Phase 2** — The funnel (agents 2–7) → dated markdown briefing
 - [ ] **Phase 3** — Watchlist monitor + portfolio tracker + scheduling
 - [ ] **Phase 4** — Web dashboard
@@ -81,8 +81,11 @@ uv sync                      # or: pip install -e ".[dev]"
 # 2. Secrets
 cp .env.example .env         # then fill in FMP_API_KEY, ANTHROPIC_API_KEY, ...
 
-# 3. Run a daily research pass (Phase 1+)
-python -m src.orchestrator   # writes reports/YYYY-MM-DD.md
+# 3. Run Stage-1 sourcing (Phase 1): universe → scout swarm → candidate list
+python -m src.orchestrator --stage1     # persists store/runs/<date>/candidates.json
+
+# (Phase 2+) the full funnel → reports/YYYY-MM-DD.md
+python -m src.orchestrator
 ```
 
 ## Disclaimer

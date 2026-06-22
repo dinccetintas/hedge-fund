@@ -1,0 +1,2 @@
+Per-run JSON audit trail lands here as store/runs/YYYY-MM-DD/candidates.json (git-tracked).
+The SQLite index (bear.sqlite) is gitignored — regenerable from these JSON files.

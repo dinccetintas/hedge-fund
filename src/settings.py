@@ -23,6 +23,9 @@ class Settings(BaseSettings):
 
     # Data feeds
     fmp_api_key: str = Field(default="", alias="FMP_API_KEY")
+    fmp_base_url: str = Field(
+        default="https://financialmodelingprep.com/api/v3", alias="FMP_BASE_URL"
+    )
     bigdata_api_key: str = Field(default="", alias="BIGDATA_API_KEY")
     finnhub_api_key: str = Field(default="", alias="FINNHUB_API_KEY")
     alphavantage_api_key: str = Field(default="", alias="ALPHAVANTAGE_API_KEY")
