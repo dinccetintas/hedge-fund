@@ -180,6 +180,7 @@ class Idea(BaseModel):
     scout: ScoutType
     thesis_one_line: str
     why_now: str = Field(description="The secular / edge narrative — what changed.")
+    theme: str | None = Field(default=None, description="Secular theme, if any (from the scout).")
 
     quality: QualityAssessment | None = None
     valuation: Valuation | None = None

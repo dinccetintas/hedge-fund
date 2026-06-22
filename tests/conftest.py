@@ -46,6 +46,22 @@ class FakeFMP:
     async def ipo_calendar(self, *, from_date, to_date):
         return self._ipos
 
+    # Remaining statement/price endpoints the agent data packet pulls (empty by default).
+    async def ratios(self, ticker, *, period="annual", limit=5, as_of=None):
+        return []
+
+    async def income_statement(self, ticker, *, period="annual", limit=5, as_of=None):
+        return []
+
+    async def balance_sheet(self, ticker, *, period="annual", limit=5, as_of=None):
+        return []
+
+    async def cash_flow(self, ticker, *, period="annual", limit=5, as_of=None):
+        return []
+
+    async def prices(self, ticker, *, as_of=None, lookback_days=365):
+        return []
+
 
 class FakeBigdata:
     """Available Bigdata.com stand-in returning canned documents."""

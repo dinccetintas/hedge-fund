@@ -13,7 +13,7 @@ import uuid
 from datetime import UTC, date, datetime
 from pathlib import Path
 
-from ..schemas import Candidate
+from ..schemas import Briefing, Candidate
 
 STORE_DIR = Path(__file__).resolve().parents[2] / "store"
 DB_PATH = STORE_DIR / "bear.sqlite"
@@ -33,6 +33,16 @@ CREATE TABLE IF NOT EXISTS candidates (
     theme    TEXT,
     reason   TEXT NOT NULL,
     payload  TEXT NOT NULL,
+    PRIMARY KEY (run_id, ticker),
+    FOREIGN KEY (run_id) REFERENCES runs(run_id)
+);
+CREATE TABLE IF NOT EXISTS ideas (
+    run_id     TEXT NOT NULL,
+    ticker     TEXT NOT NULL,
+    rank       INTEGER NOT NULL,
+    rank_score REAL,
+    conviction REAL,
+    payload    TEXT NOT NULL,
     PRIMARY KEY (run_id, ticker),
     FOREIGN KEY (run_id) REFERENCES runs(run_id)
 );
@@ -92,5 +102,44 @@ def save_candidates(
             indent=2,
         ),
         encoding="utf-8",
+    )
+    return run_id
+
+
+def save_briefing(
+    briefing: Briefing,
+    *,
+    db_path: Path = DB_PATH,
+    store_dir: Path = STORE_DIR,
+) -> str:
+    """Persist a full Briefing (ranked ideas) to SQLite + a dated JSON file. Returns the run_id."""
+    run_id = briefing.run_id or f"{briefing.run_date.isoformat()}-funnel-{uuid.uuid4().hex[:8]}"
+    briefing.run_id = run_id
+    now = datetime.now(UTC).isoformat()
+
+    conn = connect(db_path)
+    try:
+        with conn:
+            conn.execute(
+                "INSERT OR REPLACE INTO runs (run_id, run_date, stage, n_candidates, created_at) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (run_id, briefing.run_date.isoformat(), "funnel", len(briefing.ideas), now),
+            )
+            conn.executemany(
+                "INSERT OR REPLACE INTO ideas "
+                "(run_id, ticker, rank, rank_score, conviction, payload) VALUES (?, ?, ?, ?, ?, ?)",
+                [
+                    (run_id, idea.ticker, rank, idea.rank_score,
+                     idea.sizing.conviction if idea.sizing else None, idea.model_dump_json())
+                    for rank, idea in enumerate(briefing.ideas, 1)
+                ],
+            )
+    finally:
+        conn.close()
+
+    run_dir = store_dir / "runs" / briefing.run_date.isoformat()
+    run_dir.mkdir(parents=True, exist_ok=True)
+    (run_dir / "briefing.json").write_text(
+        briefing.model_dump_json(indent=2), encoding="utf-8"
     )
     return run_id

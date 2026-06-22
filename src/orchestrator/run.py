@@ -1,8 +1,8 @@
 """The daily run — wires the funnel end to end.
 
-Phase 1 implements the Stage-1 path: build the universe, run the scout swarm, persist the
-candidate list. Stages 2–7 (quality → … → synthesis) arrive in Phase 2; calling `run_daily`
-raises NotImplementedError after sourcing until they land.
+Stage 1 sources candidates (Phase 1). Stages 2–6 deep-dive the top-N candidates through the
+analysis agents with two kill-gates (quality floor, edge gate). Stage 7 ranks the survivors,
+builds the Briefing, persists it, and writes the dated markdown report.
 """
 
 from __future__ import annotations
@@ -10,13 +10,22 @@ from __future__ import annotations
 import logging
 from datetime import date
 
+from ..agents.data import gather_company_data
+from ..agents.edge_gate import EdgeGateAgent
+from ..agents.quality import QualityAgent
+from ..agents.red_team import RedTeamAgent
+from ..agents.risk_pm import RiskPMAgent
+from ..agents.valuation import ValuationAgent
+from ..config import DEPTH_LIMIT, MIN_QUALITY_SCORE
 from ..data.bigdata_client import BigdataClient
 from ..data.fmp_client import FMPClient
-from ..schemas import Briefing, Candidate
+from ..report.briefing import write_briefing
+from ..schemas import Briefing, Candidate, Idea
 from ..scouts.aggregate import source_candidates
 from ..scouts.base import ScoutContext
 from ..store import db
 from ..universe.build import build_universe
+from .synthesize import build_briefing
 
 log = logging.getLogger(__name__)
 
@@ -29,11 +38,8 @@ async def source_stage1(
     async with FMPClient() as fmp:
         universe = await build_universe(fmp, as_of=run_date)
         ctx = ScoutContext(
-            fmp=fmp,
-            universe=universe,
-            as_of=run_date,
-            bigdata=BigdataClient(),
-            enrich_cap=enrich_cap,
+            fmp=fmp, universe=universe, as_of=run_date,
+            bigdata=BigdataClient(), enrich_cap=enrich_cap,
         )
         candidates = await source_candidates(ctx, per_scout_limit=per_scout_limit)
 
@@ -42,10 +48,59 @@ async def source_stage1(
     return run_id, candidates
 
 
-async def run_daily(run_date: date | None = None) -> Briefing:
-    """Execute the full funnel. Stages 2–7 are wired in Phase 2."""
-    run_date = run_date or date.today()
-    await source_stage1(run_date)
-    raise NotImplementedError(
-        "Stages 2–7 (quality → … → synthesis) are wired in Phase 2 — see docs/METHODOLOGY.md."
+async def analyze_candidate(
+    fmp: FMPClient, candidate: Candidate, run_date: date
+) -> Idea | None:
+    """Run Stages 2–6 on one candidate. Returns an Idea, or None if a kill-gate trips."""
+    data = await gather_company_data(fmp, candidate.ticker, run_date)
+
+    quality = await QualityAgent().run(candidate, data)
+    if quality.quality_score < MIN_QUALITY_SCORE:
+        log.info("%s killed at quality gate (%.1f)", candidate.ticker, quality.quality_score)
+        return None
+
+    valuation = await ValuationAgent().run(candidate, data, quality)
+    bear = await RedTeamAgent().run(candidate, data, quality, valuation)
+    edge = await EdgeGateAgent().run(candidate, data, bear)
+    if not edge.passes:
+        log.info("%s killed at edge gate", candidate.ticker)
+        return None
+
+    sizing = await RiskPMAgent().run(candidate, data, quality, valuation, bear, edge)
+    return Idea(
+        ticker=candidate.ticker,
+        company_name=candidate.company_name,
+        as_of=run_date,
+        scout=candidate.scout,
+        thesis_one_line=candidate.one_line_reason,
+        why_now=candidate.theme or candidate.one_line_reason,
+        theme=candidate.theme,
+        quality=quality,
+        valuation=valuation,
+        bear_case=bear,
+        edge=edge,
+        sizing=sizing,
     )
+
+
+async def run_daily(run_date: date | None = None, *, depth_limit: int = DEPTH_LIMIT) -> Briefing:
+    """Execute the full funnel and return the morning Briefing."""
+    run_date = run_date or date.today()
+    run_id, candidates = await source_stage1(run_date)
+
+    ideas: list[Idea] = []
+    async with FMPClient() as fmp:
+        for candidate in candidates[:depth_limit]:
+            try:
+                idea = await analyze_candidate(fmp, candidate, run_date)
+            except Exception:  # noqa: BLE001 — one bad candidate must not sink the run
+                log.exception("Analysis failed for %s", candidate.ticker)
+                continue
+            if idea is not None:
+                ideas.append(idea)
+
+    briefing = build_briefing(ideas, run_date=run_date, run_id=run_id)
+    db.save_briefing(briefing)
+    path = write_briefing(briefing)
+    log.info("Funnel complete: %d ideas → %s", len(briefing.ideas), path)
+    return briefing

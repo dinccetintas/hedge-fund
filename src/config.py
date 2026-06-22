@@ -38,6 +38,10 @@ MAX_SINGLE_NAME_PCT = 0.20      # cap any one position at 20% of the book at ent
 STARTER_POSITION_PCT = 0.50     # start at ~half target size; add only on validation (Oguz).
 MIN_ASYMMETRY_RATIO = 2.0       # upside must be >= 2x downside to size it.
 
+# --- Funnel depth (cost control) ---
+# Stages 2–6 are LLM-driven; only the top-N candidates get the full deep dive each run.
+DEPTH_LIMIT = 15
+
 # --- Stage 7: ranking ---
 # Final score = expected_value * conviction * asymmetry (all normalized). Re-tune in Phase 5.
 RANK_WEIGHTS = {"expected_value": 1.0, "conviction": 1.0, "asymmetry": 1.0}

@@ -1,8 +1,8 @@
 """CLI entry point: `python -m src.orchestrator [--stage1]`.
 
-`--stage1` runs only the sourcing stage (Phase 1): build the universe, run the scout swarm,
-persist + print the candidate list. With no flag it attempts the full funnel (Stages 2–7 land in
-Phase 2, so it stops after sourcing for now).
+`--stage1` runs only the sourcing stage: build the universe, run the scout swarm, persist + print
+the candidate list. With no flag it runs the full funnel (Stages 1–7) and writes the dated
+markdown briefing under `reports/`.
 """
 
 from __future__ import annotations
@@ -49,6 +49,23 @@ async def _stage1() -> None:
         )
 
 
+async def _full() -> None:
+    briefing = await run_daily()
+    table = Table(title=f"Morning briefing — {len(briefing.ideas)} ideas", show_lines=False)
+    table.add_column("#", justify="right", style="dim")
+    table.add_column("Ticker", style="bold cyan")
+    table.add_column("Conv.", justify="right")
+    table.add_column("Buy-below", justify="right")
+    table.add_column("Thesis", overflow="fold")
+    for n, i in enumerate(briefing.ideas, 1):
+        conv = f"{i.sizing.conviction:g}" if i.sizing else "—"
+        bb = f"{i.valuation.buy_below_price:,.2f}" if i.valuation else "—"
+        table.add_row(str(n), i.ticker, conv, bb, i.thesis_one_line)
+    console.print(table)
+    console.print(f"\nBriefing → [green]reports/{briefing.run_date.isoformat()}.md[/]"
+                  f"  ·  run [green]{briefing.run_id}[/]")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="bear-run")
     parser.add_argument("--stage1", action="store_true", help="run only Stage-1 sourcing")
@@ -60,14 +77,9 @@ def main() -> None:
     console.print(f"Funnel:   {FUNNEL}\n")
 
     try:
-        if args.stage1:
-            asyncio.run(_stage1())
-        else:
-            asyncio.run(run_daily())
+        asyncio.run(_stage1() if args.stage1 else _full())
     except FMPError as e:
         console.print(f"[red]Data error:[/] {e}")
-    except NotImplementedError as e:
-        console.print(f"[yellow]Funnel stops here:[/] {e}")
 
 
 if __name__ == "__main__":

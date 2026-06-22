@@ -67,7 +67,7 @@ Built in phases (see `docs/METHODOLOGY.md` §6):
 
 - [x] **Phase 0** — Ideation & scaffolding
 - [x] **Phase 1** — Data layer + Scout screens (FMP client, universe builder, 6 scouts, store)
-- [ ] **Phase 2** — The funnel (agents 2–7) → dated markdown briefing
+- [x] **Phase 2** — The funnel: agents 2–6 + ranking + dated markdown briefing
 - [ ] **Phase 3** — Watchlist monitor + portfolio tracker + scheduling
 - [ ] **Phase 4** — Web dashboard
 - [ ] **Phase 5** — Track record & tuning
