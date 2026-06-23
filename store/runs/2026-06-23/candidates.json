@@ -1,5 +1,5 @@
 {
-  "run_id": "2026-06-23-stage1-f567347d",
+  "run_id": "2026-06-23-stage1-800eebf4",
   "run_date": "2026-06-23",
   "stage": "stage1",
   "candidates": [
@@ -689,6 +689,23 @@
       ]
     },
     {
+      "ticker": "SYM",
+      "company_name": "Symbotic Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Possible forced selling: down 54% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (SYM)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
       "ticker": "INSM",
       "company_name": "Insmed Inc",
       "scout": "special_situations",
@@ -791,6 +808,23 @@
       ]
     },
     {
+      "ticker": "CHTR",
+      "company_name": "Charter Communications Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 70% from its 52-wk high",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Possible forced selling: down 70% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CHTR)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
       "ticker": "FLUT",
       "company_name": "Flutter Entertainment Plc",
       "scout": "special_situations",
@@ -825,16 +859,16 @@
       ]
     },
     {
-      "ticker": "CHTR",
-      "company_name": "Charter Communications Inc",
+      "ticker": "OWL",
+      "company_name": "Blue Owl Capital Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 70% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 56% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 70% from its 52-wk high",
+          "claim": "Possible forced selling: down 56% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CHTR)",
+          "source_name": "FMP fundamentals (OWL)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -869,40 +903,6 @@
           "claim": "Possible forced selling: down 70% from its 52-wk high",
           "source_type": "fundamental",
           "source_name": "FMP fundamentals (CSGP)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "TYL",
-      "company_name": "Tyler Technologies Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 56% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 56% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TYL)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "SMMT",
-      "company_name": "Summit Therapeutics Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 54% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (SMMT)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1182,6 +1182,23 @@
       ]
     },
     {
+      "ticker": "CVNA",
+      "company_name": "Carvana Co",
+      "scout": "contrarian",
+      "one_line_reason": "Down 32% from its 52-wk high while still growing revenue 29%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Down 32% from its 52-wk high while still growing revenue 29%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CVNA)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
       "ticker": "NOC",
       "company_name": "Northrop Grumman Corp",
       "scout": "contrarian",
@@ -1192,23 +1209,6 @@
           "claim": "Down 34% from its 52-wk high while still growing revenue 3%",
           "source_type": "fundamental",
           "source_name": "FMP fundamentals (NOC)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "NKE",
-      "company_name": "Nike Inc",
-      "scout": "contrarian",
-      "one_line_reason": "Down 46% from its 52-wk high while still growing revenue 4%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Down 46% from its 52-wk high while still growing revenue 4%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NKE)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
