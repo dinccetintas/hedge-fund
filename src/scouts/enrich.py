@@ -13,6 +13,7 @@ import logging
 from dataclasses import dataclass
 from datetime import date
 
+from ..data.finviz_client import FinvizRow
 from ..data.fmp_client import FMPClient
 
 log = logging.getLogger(__name__)
@@ -58,12 +59,54 @@ async def fetch_fundamentals(fmp: FMPClient, ticker: str, as_of: date) -> Fundam
 
 
 async def enrich_many(
-    fmp: FMPClient, tickers: list[str], as_of: date, *, cap: int
+    fmp: FMPClient,
+    tickers: list[str],
+    as_of: date,
+    *,
+    cap: int,
+    prefetched: dict[str, Fundamentals] | None = None,
 ) -> dict[str, Fundamentals]:
-    """Enrich up to `cap` tickers concurrently. Returns {ticker: Fundamentals}."""
+    """Enrich up to `cap` tickers concurrently. Returns {ticker: Fundamentals}.
+
+    If `prefetched` is supplied (e.g. fundamentals already pulled from the Finviz screener), those
+    are used directly with no per-ticker API calls.
+    """
+    if prefetched:
+        return {t: prefetched[t] for t in tickers if t in prefetched}
     shortlist = tickers[:cap]
     results = await asyncio.gather(*(fetch_fundamentals(fmp, t, as_of) for t in shortlist))
     return {f.ticker: f for f in results}
+
+
+def fundamentals_from_finviz(rows: list[FinvizRow]) -> dict[str, Fundamentals]:
+    """Build the {ticker: Fundamentals} map straight from Finviz screener rows."""
+    return {
+        r.ticker: Fundamentals(
+            ticker=r.ticker,
+            roic=r.roic,
+            pe=r.pe,
+            revenue_growth=r.revenue_growth,
+            debt_to_equity=r.debt_to_equity,
+            fcf_yield=r.fcf_yield,
+        )
+        for r in rows
+        if r.ticker
+    }
+
+
+def profiles_from_finviz(rows: list[FinvizRow]) -> dict[str, dict]:
+    """Synthesize minimal `profile` dicts (price + 52-wk range) so `drawdown_from_high` works.
+
+    Finviz gives distance below the 52-week high directly; we reconstruct a high consistent with it
+    so the existing drawdown helper is reusable unchanged.
+    """
+    out: dict[str, dict] = {}
+    for r in rows:
+        if not r.ticker or r.price is None or r.pct_below_52w_high is None:
+            continue
+        high = r.price / (1.0 - r.pct_below_52w_high) if r.pct_below_52w_high < 1.0 else r.price
+        out[r.ticker] = {"price": r.price, "range": f"0.01-{high:.4f}"}
+    return out
 
 
 def drawdown_from_high(profile: dict) -> float | None:
@@ -85,9 +128,19 @@ def drawdown_from_high(profile: dict) -> float | None:
 
 
 async def fetch_profiles(
-    fmp: FMPClient, tickers: list[str], as_of: date, *, cap: int
+    fmp: FMPClient,
+    tickers: list[str],
+    as_of: date,
+    *,
+    cap: int,
+    prefetched: dict[str, dict] | None = None,
 ) -> dict[str, dict]:
-    """Fetch up to `cap` company profiles concurrently (for 52-week-range drawdown)."""
+    """Fetch up to `cap` company profiles concurrently (for 52-week-range drawdown).
+
+    If `prefetched` profiles are supplied (e.g. synthesized from Finviz), use them directly.
+    """
+    if prefetched:
+        return {t: prefetched[t] for t in tickers if t in prefetched}
     shortlist = tickers[:cap]
 
     async def one(t: str) -> tuple[str, dict]:

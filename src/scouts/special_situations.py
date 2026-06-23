@@ -54,7 +54,8 @@ class SpecialSituationsScout(Scout):
         pool = [s for s in ctx.universe if (s.market_cap or 0) >= MIN_MARKET_CAP]
         pool.sort(key=lambda s: s.market_cap or 0, reverse=True)
         profiles = await fetch_profiles(
-            ctx.fmp, [s.ticker for s in pool], ctx.as_of, cap=ctx.enrich_cap
+            ctx.fmp, [s.ticker for s in pool], ctx.as_of,
+            cap=ctx.enrich_cap, prefetched=ctx.profiles,
         )
         already = {c.ticker for c in out}
         for stock in pool:

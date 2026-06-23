@@ -26,6 +26,10 @@ class ScoutContext:
     # Cap on per-scout fundamental enrichment calls (free-tier friendly; raise on Starter+).
     enrich_cap: int = 50
     by_ticker: dict[str, UniverseStock] = field(default_factory=dict)
+    # Fundamentals / profiles pre-pulled in bulk (e.g. from the Finviz screen) keyed by ticker.
+    # When present, scouts use these instead of per-ticker enrichment API calls.
+    fundamentals: dict = field(default_factory=dict)
+    profiles: dict = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         if not self.by_ticker:

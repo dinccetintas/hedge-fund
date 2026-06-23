@@ -18,28 +18,46 @@ from ..agents.risk_pm import RiskPMAgent
 from ..agents.valuation import ValuationAgent
 from ..config import DEPTH_LIMIT, MIN_QUALITY_SCORE
 from ..data.bigdata_client import BigdataClient
+from ..data.finviz_client import FinvizScreener
 from ..data.fmp_client import FMPClient
 from ..report.briefing import write_briefing
 from ..schemas import Briefing, Candidate, Idea
 from ..scouts.aggregate import source_candidates
 from ..scouts.base import ScoutContext
+from ..scouts.enrich import fundamentals_from_finviz, profiles_from_finviz
 from ..store import db
-from ..universe.build import build_universe
+from ..universe.build import build_universe_finviz
 from .synthesize import build_briefing
 
 log = logging.getLogger(__name__)
 
 
 async def source_stage1(
-    run_date: date | None = None, *, enrich_cap: int = 50, per_scout_limit: int = 25
+    run_date: date | None = None,
+    *,
+    enrich_cap: int = 50,
+    per_scout_limit: int = 25,
+    universe_size: int = 1000,
 ) -> tuple[str, list[Candidate]]:
-    """Stage 1 only: universe → scout swarm → persisted candidates. Returns (run_id, candidates)."""
+    """Stage 1 only: universe → scout swarm → persisted candidates. Returns (run_id, candidates).
+
+    The universe (and the quant fundamentals the scouts need) is sourced from the Finviz screener,
+    since FMP's legacy screener is deprecated and the new one is gated behind a paid plan. FMP is
+    still opened for any per-symbol calls a scout may attempt (best-effort, degrades gracefully).
+    """
     run_date = run_date or date.today()
+    async with FinvizScreener() as fv:
+        universe, rows = await build_universe_finviz(
+            fv, as_of=run_date, max_rows=universe_size
+        )
+    fundamentals = fundamentals_from_finviz(rows)
+    profiles = profiles_from_finviz(rows)
+
     async with FMPClient() as fmp:
-        universe = await build_universe(fmp, as_of=run_date)
         ctx = ScoutContext(
             fmp=fmp, universe=universe, as_of=run_date,
             bigdata=BigdataClient(), enrich_cap=enrich_cap,
+            fundamentals=fundamentals, profiles=profiles,
         )
         candidates = await source_candidates(ctx, per_scout_limit=per_scout_limit)
 

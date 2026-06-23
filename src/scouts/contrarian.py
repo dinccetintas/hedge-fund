@@ -24,13 +24,17 @@ class ContrarianScout(Scout):
         pool.sort(key=lambda s: s.market_cap or 0, reverse=True)
         tickers = [s.ticker for s in pool]
 
-        profiles = await fetch_profiles(ctx.fmp, tickers, ctx.as_of, cap=ctx.enrich_cap)
+        profiles = await fetch_profiles(
+            ctx.fmp, tickers, ctx.as_of, cap=ctx.enrich_cap, prefetched=ctx.profiles
+        )
         # Only enrich growth for names that actually cleared the drawdown bar (saves calls).
         drawn_down = [
             t for t in tickers
             if (dd := drawdown_from_high(profiles.get(t, {}))) is not None and dd >= MIN_DRAWDOWN
         ]
-        funds = await enrich_many(ctx.fmp, drawn_down, ctx.as_of, cap=ctx.enrich_cap)
+        funds = await enrich_many(
+            ctx.fmp, drawn_down, ctx.as_of, cap=ctx.enrich_cap, prefetched=ctx.fundamentals
+        )
 
         out: list[Candidate] = []
         for stock in pool:
