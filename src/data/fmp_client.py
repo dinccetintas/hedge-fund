@@ -3,10 +3,10 @@
 Provides the stock **screener** that powers Stage-1 breadth, plus fundamentals, prices, and
 earnings. Async (httpx) + retries (tenacity) + on-disk cache + free-tier-friendly throttling.
 
-Endpoint paths are configurable via `FMP_BASE_URL` because FMP is mid-migration from the legacy
-`/api/v3` base to the newer `/stable` base. We default to legacy `/api/v3`, which is the most
-compatible with free keys; flip the env var (and `path_style`) if your key targets `/stable`.
-The API key is passed as the `apikey` query parameter.
+Targets FMP's current **`/stable`** base (the legacy `/api/v3` base was deprecated on 2025-08-31).
+On `/stable`, per-symbol endpoints take the ticker as a `symbol=` query parameter (not a path
+segment) and work on free keys; the bulk screener is gated behind a paid plan (Stage-1 breadth is
+sourced from Finviz instead). The API key is passed as the `apikey` query parameter.
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ from . import cache
 
 log = logging.getLogger(__name__)
 
-DEFAULT_BASE_URL = "https://financialmodelingprep.com/api/v3"
+DEFAULT_BASE_URL = "https://financialmodelingprep.com/stable"
 
 # Be polite to the free tier (default 250 calls/day, a few req/sec). One in-flight burst at a time.
 _RATE_LIMIT = asyncio.Semaphore(4)
@@ -110,7 +110,7 @@ class FMPClient:
     # Fundamentals (point-in-time: only statements filed on/before as_of)
     # ----------------------------------------------------------------------------------------- #
     async def profile(self, ticker: str, *, as_of: date | None = None) -> dict[str, Any]:
-        data = await self._request(f"profile/{ticker}", {}, as_of=None)
+        data = await self._request("profile", {"symbol": ticker}, as_of=None)
         rows = data if isinstance(data, list) else []
         return rows[0] if rows else {}
 
@@ -119,8 +119,8 @@ class FMPClient:
     ) -> list[dict[str, Any]]:
         as_of = as_of or date.today()
         data = await self._request(
-            f"{stmt}/{ticker}",
-            {"period": period, "limit": limit},
+            stmt,
+            {"symbol": ticker, "period": period, "limit": limit},
             as_of=as_of.isoformat(),
         )
         rows = data if isinstance(data, list) else []
@@ -167,17 +167,20 @@ class FMPClient:
     async def prices(
         self, ticker: str, *, as_of: date | None = None, lookback_days: int = 365
     ) -> list[dict[str, Any]]:
-        """Daily OHLCV up to as_of (for charts + entry-zone / drawdown math)."""
+        """Daily close prices up to as_of (newest first), for entry-zone / drawdown math.
+
+        Uses `/stable` light EOD history (`{date, price, volume}`); we add a `close` alias so
+        downstream consumers that expect OHLCV-style rows keep working.
+        """
         as_of = as_of or date.today()
         start = as_of - timedelta(days=lookback_days)
         data = await self._request(
-            f"historical-price-full/{ticker}",
-            {"from": start.isoformat(), "to": as_of.isoformat()},
+            "historical-price-eod/light",
+            {"symbol": ticker, "from": start.isoformat(), "to": as_of.isoformat()},
             as_of=as_of.isoformat(),
         )
-        if isinstance(data, dict):
-            return data.get("historical", [])
-        return data if isinstance(data, list) else []
+        rows = data if isinstance(data, list) else []
+        return [{**r, "close": r.get("close", r.get("price"))} for r in rows]
 
     async def financial_growth(
         self, ticker: str, *, period: str = "annual", limit: int = 5, as_of: date | None = None

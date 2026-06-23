@@ -53,10 +53,16 @@ class CompanyData:
             lines.append(f"Business: {str(p['description'])[:600]}")
 
         lines.append("\nKey metrics (newest first):")
-        for km in self.key_metrics[:5]:
+        for i, km in enumerate(self.key_metrics[:5]):
+            r = self.ratios[i] if i < len(self.ratios) else {}
+            roic = km.get("returnOnInvestedCapital", km.get("roic"))
+            pe = r.get("priceToEarningsRatio", km.get("peRatio"))
+            de = r.get("debtToEquityRatio", km.get("debtToEquity"))
+            net_margin = r.get("netProfitMargin")
             lines.append(
-                f"  {km.get('date', '?')}: ROIC={km.get('roic')}, P/E={km.get('peRatio')}, "
-                f"FCF yield={km.get('freeCashFlowYield')}, D/E={km.get('debtToEquity')}"
+                f"  {km.get('date', '?')}: ROIC={_pct(roic)}, P/E={_round(pe)}, "
+                f"net margin={_pct(net_margin)}, FCF yield={_pct(km.get('freeCashFlowYield'))}, "
+                f"D/E={_round(de)}"
             )
         lines.append("Growth (newest first):")
         for g in self.growth[:5]:
@@ -81,6 +87,21 @@ def _ratio(num: Any, den: Any) -> str:
     try:
         return f"{num / den:.2f}"
     except (TypeError, ZeroDivisionError):
+        return "?"
+
+
+def _pct(v: Any) -> str:
+    """Render a fraction as a percent, or '?' if missing/non-numeric."""
+    try:
+        return f"{float(v):.1%}"
+    except (TypeError, ValueError):
+        return "?"
+
+
+def _round(v: Any) -> str:
+    try:
+        return f"{float(v):.1f}"
+    except (TypeError, ValueError):
         return "?"
 
 
