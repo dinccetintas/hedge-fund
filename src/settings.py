@@ -16,7 +16,14 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     # LLM
+    # Provider selector: "anthropic" (default) or "openrouter" (OpenAI-compatible gateway).
+    llm_provider: str = Field(default="anthropic", alias="LLM_PROVIDER")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
+    # OpenRouter (used when llm_provider == "openrouter"). Key is sent as Authorization: Bearer.
+    openrouter_api_key: str = Field(default="", alias="OPENROUTER_API_KEY")
+    openrouter_base_url: str = Field(
+        default="https://openrouter.ai/api/v1", alias="OPENROUTER_BASE_URL"
+    )
     model_synthesis: str = Field(default="claude-opus-4-8", alias="MODEL_SYNTHESIS")
     model_screen: str = Field(default="claude-haiku-4-5-20251001", alias="MODEL_SCREEN")
     model_analysis: str = Field(default="claude-sonnet-4-6", alias="MODEL_ANALYSIS")
