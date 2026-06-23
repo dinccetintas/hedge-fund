@@ -39,7 +39,7 @@ def _render(candidates) -> None:
 
 
 async def _stage1() -> None:
-    run_id, candidates = await source_stage1()
+    run_id, candidates, _ = await source_stage1()
     _render(candidates)
     console.print(f"\nPersisted run [green]{run_id}[/] → store/runs/{date.today().isoformat()}/")
     if not candidates:

@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Any
 
+from ..data.finviz_client import FinvizRow
 from ..data.fmp_client import FMPClient
 from ..scouts.enrich import drawdown_from_high
 
@@ -105,6 +106,52 @@ def _round(v: Any) -> str:
         return "?"
 
 
+def company_data_from_finviz(
+    row: FinvizRow, as_of: date, *, news: list[str] | None = None
+) -> CompanyData:
+    """Build a current-snapshot data packet from a Finviz row — no FMP calls needed.
+
+    Finviz is a point-in-time snapshot, not multi-year statements, so the history-based fields stay
+    empty; the agents still get current ROIC / margins / growth / valuation + the 52-wk drawdown.
+    Used as the per-candidate data source when FMP is unavailable (free-tier daily cap, outage).
+    """
+    profile: dict[str, Any] = {
+        "companyName": row.company,
+        "sector": row.sector,
+        "industry": row.industry,
+        "price": row.price,
+        "marketCap": row.market_cap,
+        "beta": row.beta,
+    }
+    # Reconstruct a 52-wk high consistent with the distance-below-high so drawdown math works.
+    if row.price is not None and row.pct_below_52w_high is not None:
+        high = (
+            row.price / (1.0 - row.pct_below_52w_high)
+            if row.pct_below_52w_high < 1.0 else row.price
+        )
+        profile["range"] = f"0.01-{high:.4f}"
+    snapshot = f"{as_of.isoformat()} (Finviz snapshot)"
+    return CompanyData(
+        ticker=row.ticker,
+        as_of=as_of,
+        profile=profile,
+        key_metrics=[{
+            "date": snapshot,
+            "roic": row.roic,
+            "returnOnEquity": row.roe,
+            "freeCashFlowYield": row.fcf_yield,
+        }],
+        ratios=[{
+            "priceToEarningsRatio": row.pe,
+            "debtToEquityRatio": row.debt_to_equity,
+            "netProfitMargin": row.profit_margin,
+            "grossProfitMargin": row.gross_margin,
+        }],
+        growth=[{"date": snapshot, "revenueGrowth": row.revenue_growth}],
+        news=news or [],
+    )
+
+
 async def gather_company_data(
     fmp: FMPClient, ticker: str, as_of: date, *, news: list[str] | None = None
 ) -> CompanyData:
@@ -117,15 +164,14 @@ async def gather_company_data(
         except Exception:  # noqa: BLE001 — premium-gated/missing endpoints degrade to empty
             return None
 
-    profile, key_metrics, ratios, income, balance, cash_flow, growth, prices = await asyncio.gather(
+    # Only the five endpoints the agent prompt actually renders, to stay within free-tier rate
+    # limits (current_price falls back to profile.price, so the daily price series isn't needed).
+    profile, key_metrics, ratios, income, growth = await asyncio.gather(
         safe(fmp.profile(ticker, as_of=as_of)),
         safe(fmp.key_metrics(ticker, period="annual", limit=5, as_of=as_of)),
         safe(fmp.ratios(ticker, period="annual", limit=5, as_of=as_of)),
         safe(fmp.income_statement(ticker, period="annual", limit=5, as_of=as_of)),
-        safe(fmp.balance_sheet(ticker, period="annual", limit=5, as_of=as_of)),
-        safe(fmp.cash_flow(ticker, period="annual", limit=5, as_of=as_of)),
         safe(fmp.financial_growth(ticker, period="annual", limit=5, as_of=as_of)),
-        safe(fmp.prices(ticker, as_of=as_of, lookback_days=400)),
     )
     return CompanyData(
         ticker=ticker,
@@ -134,9 +180,6 @@ async def gather_company_data(
         key_metrics=key_metrics or [],
         ratios=ratios or [],
         income=income or [],
-        balance=balance or [],
-        cash_flow=cash_flow or [],
         growth=growth or [],
-        prices=prices or [],
         news=news or [],
     )

@@ -26,8 +26,9 @@ log = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://financialmodelingprep.com/stable"
 
-# Be polite to the free tier (default 250 calls/day, a few req/sec). One in-flight burst at a time.
-_RATE_LIMIT = asyncio.Semaphore(4)
+# Be polite to the free tier (default 250 calls/day, a few req/sec): cap concurrency low so the
+# per-candidate fan-out doesn't burst into 429s.
+_RATE_LIMIT = asyncio.Semaphore(2)
 
 
 class FMPError(RuntimeError):
