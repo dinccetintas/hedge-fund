@@ -1,52 +1,35 @@
 {
-  "run_id": "2026-06-23-stage1-6ba439eb",
+  "run_id": "2026-06-23-stage1-3503515a",
   "run_date": "2026-06-23",
   "stage": "stage1",
   "candidates": [
     {
-      "ticker": "MSFT",
-      "company_name": "Microsoft Corp",
+      "ticker": "GDDY",
+      "company_name": "Godaddy Inc",
       "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 24%, revenue growth 15%, P/E 21.9  |  [contrarian] Down 34% from its 52-wk high while still growing revenue 15%",
+      "one_line_reason": "High-ROIC compounder: ROIC 21%, revenue growth 8%, P/E 11.9  |  [special_situations] Possible forced selling: down 59% from its 52-wk high  |  [contrarian] Down 59% from its 52-wk high while still growing revenue 8%",
       "theme": null,
       "evidence": [
         {
-          "claim": "High-ROIC compounder: ROIC 24%, revenue growth 15%, P/E 21.9",
+          "claim": "High-ROIC compounder: ROIC 21%, revenue growth 8%, P/E 11.9",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (MSFT)",
+          "source_name": "FMP fundamentals (GDDY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 34% from its 52-wk high while still growing revenue 15%",
+          "claim": "Possible forced selling: down 59% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (MSFT)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "NFLX",
-      "company_name": "Netflix Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 29%, revenue growth 13%, P/E 23.6  |  [contrarian] Down 46% from its 52-wk high while still growing revenue 13%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 29%, revenue growth 13%, P/E 23.6",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NFLX)",
+          "source_name": "FMP fundamentals (GDDY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 46% from its 52-wk high while still growing revenue 13%",
+          "claim": "Down 59% from its 52-wk high while still growing revenue 8%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NFLX)",
+          "source_name": "FMP fundamentals (GDDY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -54,49 +37,32 @@
       ]
     },
     {
-      "ticker": "BX",
-      "company_name": "Blackstone Inc",
+      "ticker": "PODD",
+      "company_name": "Insulet Corp",
       "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 14%, revenue growth 16%, P/E 31.6  |  [contrarian] Down 35% from its 52-wk high while still growing revenue 16%",
+      "one_line_reason": "High-ROIC compounder: ROIC 14%, revenue growth 25%, P/E 32.4  |  [special_situations] Possible forced selling: down 61% from its 52-wk high  |  [contrarian] Down 61% from its 52-wk high while still growing revenue 25%",
       "theme": null,
       "evidence": [
         {
-          "claim": "High-ROIC compounder: ROIC 14%, revenue growth 16%, P/E 31.6",
+          "claim": "High-ROIC compounder: ROIC 14%, revenue growth 25%, P/E 32.4",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (BX)",
+          "source_name": "FMP fundamentals (PODD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 35% from its 52-wk high while still growing revenue 16%",
+          "claim": "Possible forced selling: down 61% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (BX)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "NOW",
-      "company_name": "ServiceNow Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 56% from its 52-wk high  |  [contrarian] Down 56% from its 52-wk high while still growing revenue 24%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 56% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NOW)",
+          "source_name": "FMP fundamentals (PODD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 56% from its 52-wk high while still growing revenue 24%",
+          "claim": "Down 61% from its 52-wk high while still growing revenue 25%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NOW)",
+          "source_name": "FMP fundamentals (PODD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -104,49 +70,32 @@
       ]
     },
     {
-      "ticker": "ADBE",
-      "company_name": "Adobe Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 50% from its 52-wk high  |  [contrarian] Down 50% from its 52-wk high while still growing revenue 13%",
+      "ticker": "TTD",
+      "company_name": "Trade Desk Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 15%, revenue growth 28%, P/E 20.3  |  [special_situations] Possible forced selling: down 80% from its 52-wk high  |  [contrarian] Down 80% from its 52-wk high while still growing revenue 28%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 50% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 15%, revenue growth 28%, P/E 20.3",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ADBE)",
+          "source_name": "FMP fundamentals (TTD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 50% from its 52-wk high while still growing revenue 13%",
+          "claim": "Possible forced selling: down 80% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ADBE)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "INTU",
-      "company_name": "Intuit Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 68% from its 52-wk high  |  [contrarian] Down 68% from its 52-wk high while still growing revenue 20%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 68% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (INTU)",
+          "source_name": "FMP fundamentals (TTD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
         {
-          "claim": "Down 68% from its 52-wk high while still growing revenue 20%",
+          "claim": "Down 80% from its 52-wk high while still growing revenue 28%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (INTU)",
+          "source_name": "FMP fundamentals (TTD)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -154,449 +103,32 @@
       ]
     },
     {
-      "ticker": "BSX",
-      "company_name": "Boston Scientific Corp",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 60% from its 52-wk high  |  [contrarian] Down 60% from its 52-wk high while still growing revenue 15%",
+      "ticker": "IT",
+      "company_name": "Gartner Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 22%, revenue growth 10%, P/E 12.4  |  [special_situations] Possible forced selling: down 69% from its 52-wk high  |  [contrarian] Down 69% from its 52-wk high while still growing revenue 10%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 60% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 22%, revenue growth 10%, P/E 12.4",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (BSX)",
+          "source_name": "FMP fundamentals (IT)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
         },
-        {
-          "claim": "Down 60% from its 52-wk high while still growing revenue 15%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (BSX)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "NVDA",
-      "company_name": "NVIDIA Corp",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 77%, revenue growth 67%, P/E 31.9",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 77%, revenue growth 67%, P/E 31.9",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NVDA)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "AAPL",
-      "company_name": "Apple Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 68%, revenue growth 9%, P/E 35.9",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 68%, revenue growth 9%, P/E 35.9",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (AAPL)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "GOOGL",
-      "company_name": "Alphabet Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 28%, revenue growth 17%, P/E 26.7",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 28%, revenue growth 17%, P/E 26.7",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (GOOGL)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "GOOG",
-      "company_name": "Alphabet Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 28%, revenue growth 17%, P/E 26.6",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 28%, revenue growth 17%, P/E 26.6",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (GOOG)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "AMZN",
-      "company_name": "Amazon.com Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 14%, revenue growth 13%, P/E 27.8",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 14%, revenue growth 13%, P/E 27.8",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (AMZN)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "META",
-      "company_name": "Meta Platforms Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 22%, revenue growth 19%, P/E 20.5",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 22%, revenue growth 19%, P/E 20.5",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (META)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "LLY",
-      "company_name": "Lilly(Eli) & Co",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 36%, revenue growth 22%, P/E 39.7",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 36%, revenue growth 22%, P/E 39.7",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (LLY)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "V",
-      "company_name": "Visa Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 38%, revenue growth 13%, P/E 28.7",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 38%, revenue growth 13%, P/E 28.7",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (V)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "MA",
-      "company_name": "Mastercard Incorporated",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 65%, revenue growth 16%, P/E 28.0",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 65%, revenue growth 16%, P/E 28.0",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (MA)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "KO",
-      "company_name": "Coca-Cola Co",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 19%, revenue growth 8%, P/E 25.0",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 19%, revenue growth 8%, P/E 25.0",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (KO)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "GEV",
-      "company_name": "GE Vernova Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 56%, revenue growth 16%, P/E 32.9",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 56%, revenue growth 16%, P/E 32.9",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (GEV)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "PM",
-      "company_name": "Philip Morris International Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 32%, revenue growth 7%, P/E 24.4",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 32%, revenue growth 7%, P/E 24.4",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (PM)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "QCOM",
-      "company_name": "Qualcomm Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 24%, revenue growth 13%, P/E 24.1",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 24%, revenue growth 13%, P/E 24.1",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (QCOM)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "AXP",
-      "company_name": "American Express Co",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 12%, revenue growth 16%, P/E 21.1",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 12%, revenue growth 16%, P/E 21.1",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (AXP)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "AMGN",
-      "company_name": "AMGEN Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 13%, revenue growth 8%, P/E 24.0",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 13%, revenue growth 8%, P/E 24.0",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (AMGN)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "TJX",
-      "company_name": "TJX Companies Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 26%, revenue growth 13%, P/E 31.9",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 26%, revenue growth 13%, P/E 31.9",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TJX)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "SCHW",
-      "company_name": "Charles Schwab Corp",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 14%, revenue growth 18%, P/E 18.2",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 14%, revenue growth 18%, P/E 18.2",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (SCHW)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "SCCO",
-      "company_name": "Southern Copper Corp",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 26%, revenue growth 11%, P/E 32.2",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 26%, revenue growth 11%, P/E 32.2",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (SCCO)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "UBER",
-      "company_name": "Uber Technologies Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 23%, revenue growth 36%, P/E 17.8",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 23%, revenue growth 36%, P/E 17.8",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (UBER)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "BKNG",
-      "company_name": "Booking Holdings Inc",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 85%, revenue growth 32%, P/E 22.1",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 85%, revenue growth 32%, P/E 22.1",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (BKNG)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "PH",
-      "company_name": "Parker-Hannifin Corp",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 8%, P/E 35.5",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 8%, P/E 35.5",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (PH)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "PGR",
-      "company_name": "Progressive Corp",
-      "scout": "quality_compounder",
-      "one_line_reason": "High-ROIC compounder: ROIC 29%, revenue growth 16%, P/E 10.5",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "High-ROIC compounder: ROIC 29%, revenue growth 16%, P/E 10.5",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (PGR)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "COIN",
-      "company_name": "Coinbase Global Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 63% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 63% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (COIN)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "MSTR",
-      "company_name": "Strategy Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 76% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 76% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (MSTR)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "RBLX",
-      "company_name": "Roblox Corp",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 69% from its 52-wk high",
-      "theme": null,
-      "evidence": [
         {
           "claim": "Possible forced selling: down 69% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (RBLX)",
+          "source_name": "FMP fundamentals (IT)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 69% from its 52-wk high while still growing revenue 10%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (IT)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -604,16 +136,32 @@
       ]
     },
     {
-      "ticker": "AXON",
-      "company_name": "Axon Enterprise Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
+      "ticker": "DOCU",
+      "company_name": "DocuSign Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 17%, P/E 27.7  |  [special_situations] Possible forced selling: down 51% from its 52-wk high  |  [contrarian] Down 51% from its 52-wk high while still growing revenue 17%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 54% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 17%, P/E 27.7",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (AXON)",
+          "source_name": "FMP fundamentals (DOCU)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Possible forced selling: down 51% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (DOCU)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 51% from its 52-wk high while still growing revenue 17%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (DOCU)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -621,16 +169,157 @@
       ]
     },
     {
-      "ticker": "ZTS",
-      "company_name": "Zoetis Inc",
+      "ticker": "FDS",
+      "company_name": "Factset Research Systems Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 9%, P/E 14.1  |  [special_situations] Possible forced selling: down 52% from its 52-wk high  |  [contrarian] Down 52% from its 52-wk high while still growing revenue 9%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 9%, P/E 14.1",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (FDS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Possible forced selling: down 52% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (FDS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 52% from its 52-wk high while still growing revenue 9%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (FDS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "ERIE",
+      "company_name": "Erie Indemnity Co",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 24%, revenue growth 10%, P/E 19.5  |  [contrarian] Down 44% from its 52-wk high while still growing revenue 10%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 24%, revenue growth 10%, P/E 19.5",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (ERIE)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 44% from its 52-wk high while still growing revenue 10%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (ERIE)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "HLI",
+      "company_name": "Houlihan Lokey Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 15%, revenue growth 11%, P/E 22.7  |  [contrarian] Down 33% from its 52-wk high while still growing revenue 11%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 15%, revenue growth 11%, P/E 22.7",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (HLI)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 33% from its 52-wk high while still growing revenue 11%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (HLI)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "UHS",
+      "company_name": "Universal Health Services Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 13%, revenue growth 8%, P/E 5.9  |  [contrarian] Down 42% from its 52-wk high while still growing revenue 8%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 13%, revenue growth 8%, P/E 5.9",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (UHS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 42% from its 52-wk high while still growing revenue 8%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (UHS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "CHWY",
+      "company_name": "Chewy Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 28%, revenue growth 12%, P/E 29.1  |  [special_situations] Possible forced selling: down 60% from its 52-wk high",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 28%, revenue growth 12%, P/E 29.1",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CHWY)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Possible forced selling: down 60% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CHWY)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "JOBY",
+      "company_name": "Joby Aviation Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 53% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 53% from its 52-wk high  |  [contrarian] Down 53% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
       "theme": null,
       "evidence": [
         {
           "claim": "Possible forced selling: down 53% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ZTS)",
+          "source_name": "FMP fundamentals (JOBY)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 53% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (JOBY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -638,16 +327,24 @@
       ]
     },
     {
-      "ticker": "WDAY",
-      "company_name": "Workday Inc",
+      "ticker": "KTOS",
+      "company_name": "Kratos Defense & Security Solutions Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 55% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 62% from its 52-wk high  |  [contrarian] Down 62% from its 52-wk high while still growing revenue 12%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 55% from its 52-wk high",
+          "claim": "Possible forced selling: down 62% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (WDAY)",
+          "source_name": "FMP fundamentals (KTOS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 62% from its 52-wk high while still growing revenue 12%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (KTOS)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -655,16 +352,24 @@
       ]
     },
     {
-      "ticker": "FISV",
-      "company_name": "Fiserv Inc",
+      "ticker": "BMNR",
+      "company_name": "BitMine Immersion Technologies Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 73% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 90% from its 52-wk high  |  [contrarian] Down 90% from its 52-wk high while still growing revenue 628%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 73% from its 52-wk high",
+          "claim": "Possible forced selling: down 90% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (FISV)",
+          "source_name": "FMP fundamentals (BMNR)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 90% from its 52-wk high while still growing revenue 628%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (BMNR)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -672,16 +377,49 @@
       ]
     },
     {
-      "ticker": "VEEV",
-      "company_name": "Veeva Systems Inc",
+      "ticker": "HUBS",
+      "company_name": "HubSpot Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 51% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 70% from its 52-wk high  |  [contrarian] Down 70% from its 52-wk high while still growing revenue 29%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Possible forced selling: down 70% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (HUBS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 70% from its 52-wk high while still growing revenue 29%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (HUBS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "BSY",
+      "company_name": "Bentley Systems Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 51% from its 52-wk high  |  [contrarian] Down 51% from its 52-wk high while still growing revenue 13%",
       "theme": null,
       "evidence": [
         {
           "claim": "Possible forced selling: down 51% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (VEEV)",
+          "source_name": "FMP fundamentals (BSY)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 51% from its 52-wk high while still growing revenue 13%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (BSY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -689,16 +427,49 @@
       ]
     },
     {
-      "ticker": "SYM",
-      "company_name": "Symbotic Inc",
+      "ticker": "RYAN",
+      "company_name": "Ryan Specialty Holdings Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 52% from its 52-wk high  |  [contrarian] Down 52% from its 52-wk high while still growing revenue 25%",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Possible forced selling: down 52% from its 52-wk high",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (RYAN)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 52% from its 52-wk high while still growing revenue 25%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (RYAN)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "TEM",
+      "company_name": "Tempus AI Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high  |  [contrarian] Down 54% from its 52-wk high while still growing revenue 47%",
       "theme": null,
       "evidence": [
         {
           "claim": "Possible forced selling: down 54% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (SYM)",
+          "source_name": "FMP fundamentals (TEM)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 54% from its 52-wk high while still growing revenue 47%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (TEM)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -706,16 +477,24 @@
       ]
     },
     {
-      "ticker": "INSM",
-      "company_name": "Insmed Inc",
+      "ticker": "GWRE",
+      "company_name": "Guidewire Software Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 62% from its 52-wk high  |  [contrarian] Down 62% from its 52-wk high while still growing revenue 10%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 54% from its 52-wk high",
+          "claim": "Possible forced selling: down 62% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (INSM)",
+          "source_name": "FMP fundamentals (GWRE)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        },
+        {
+          "claim": "Down 62% from its 52-wk high while still growing revenue 10%",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (GWRE)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -723,16 +502,16 @@
       ]
     },
     {
-      "ticker": "TEAM",
-      "company_name": "Atlassian Corp",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 64% from its 52-wk high",
+      "ticker": "DCI",
+      "company_name": "Donaldson Co Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 19%, revenue growth 7%, P/E 23.1",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 64% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 19%, revenue growth 7%, P/E 23.1",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TEAM)",
+          "source_name": "FMP fundamentals (DCI)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -740,16 +519,16 @@
       ]
     },
     {
-      "ticker": "ZS",
-      "company_name": "Zscaler Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 63% from its 52-wk high",
+      "ticker": "CFR",
+      "company_name": "Cullen Frost Bankers Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 13%, revenue growth 15%, P/E 14.6",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 63% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 13%, revenue growth 15%, P/E 14.6",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ZS)",
+          "source_name": "FMP fundamentals (CFR)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -757,16 +536,16 @@
       ]
     },
     {
-      "ticker": "CRCL",
-      "company_name": "Circle Internet Group Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 73% from its 52-wk high",
+      "ticker": "DDS",
+      "company_name": "Dillard's Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 27%, revenue growth 8%, P/E 13.5",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 73% from its 52-wk high",
+          "claim": "High-ROIC compounder: ROIC 27%, revenue growth 8%, P/E 13.5",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CRCL)",
+          "source_name": "FMP fundamentals (DDS)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -774,8 +553,263 @@
       ]
     },
     {
-      "ticker": "CTSH",
-      "company_name": "Cognizant Technology Solutions Corp",
+      "ticker": "PRI",
+      "company_name": "Primerica Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 18%, revenue growth 8%, P/E 11.7",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 18%, revenue growth 8%, P/E 11.7",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (PRI)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "RRC",
+      "company_name": "Range Resources Corp",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 11%, P/E 9.7",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 11%, P/E 9.7",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (RRC)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "ECG",
+      "company_name": "Everus Construction Group",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 22%, revenue growth 16%, P/E 37.7",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 22%, revenue growth 16%, P/E 37.7",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (ECG)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "CRUS",
+      "company_name": "Cirrus Logic Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 18%, revenue growth 8%, P/E 21.1",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 18%, revenue growth 8%, P/E 21.1",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CRUS)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "TGTX",
+      "company_name": "TG Therapeutics Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 35%, revenue growth 427%, P/E 19.0",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 35%, revenue growth 427%, P/E 19.0",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (TGTX)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "MTCH",
+      "company_name": "Match Group Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 20%, revenue growth 8%, P/E 13.4",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 20%, revenue growth 8%, P/E 13.4",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (MTCH)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "HALO",
+      "company_name": "Halozyme Therapeutics Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 39%, P/E 24.8",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 39%, P/E 24.8",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (HALO)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "SSD",
+      "company_name": "Simpson Manufacturing Co Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 14%, revenue growth 13%, P/E 23.2",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 14%, revenue growth 13%, P/E 23.2",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (SSD)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "CBSH",
+      "company_name": "Commerce Bancshares Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 13%, revenue growth 9%, P/E 13.6",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 13%, revenue growth 9%, P/E 13.6",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (CBSH)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "IDCC",
+      "company_name": "Interdigital Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 32%, revenue growth 18%, P/E 28.0",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 32%, revenue growth 18%, P/E 28.0",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (IDCC)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "MANH",
+      "company_name": "Manhattan Associates Inc",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 83%, revenue growth 13%, P/E 36.1",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 83%, revenue growth 13%, P/E 36.1",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (MANH)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "BAH",
+      "company_name": "Booz Allen Hamilton Holding Corp",
+      "scout": "quality_compounder",
+      "one_line_reason": "High-ROIC compounder: ROIC 16%, revenue growth 7%, P/E 9.2",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "High-ROIC compounder: ROIC 16%, revenue growth 7%, P/E 9.2",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (BAH)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "ADMA",
+      "company_name": "Adma Biologics Inc",
+      "scout": "hidden_gem",
+      "one_line_reason": "Under-covered small-cap leader: ROIC 28% at P/E 12.6, ~$1990M cap",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Under-covered small-cap leader: ROIC 28% at P/E 12.6, ~$1990M cap",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (ADMA)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "TNET",
+      "company_name": "TriNet Group Inc",
+      "scout": "hidden_gem",
+      "one_line_reason": "Under-covered small-cap leader: ROIC 16% at P/E 12.9, ~$1980M cap",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Under-covered small-cap leader: ROIC 16% at P/E 12.9, ~$1980M cap",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (TNET)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "SLDE",
+      "company_name": "Slide Insurance Holdings Inc",
+      "scout": "hidden_gem",
+      "one_line_reason": "Under-covered small-cap leader: ROIC 43% at P/E 4.7, ~$1940M cap",
+      "theme": null,
+      "evidence": [
+        {
+          "claim": "Under-covered small-cap leader: ROIC 43% at P/E 4.7, ~$1940M cap",
+          "source_type": "fundamental",
+          "source_name": "FMP fundamentals (SLDE)",
+          "source_date": "2026-06-23",
+          "url": null,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "ticker": "HIMS",
+      "company_name": "Hims & Hers Health Inc",
       "scout": "special_situations",
       "one_line_reason": "Possible forced selling: down 52% from its 52-wk high",
       "theme": null,
@@ -783,7 +817,7 @@
         {
           "claim": "Possible forced selling: down 52% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CTSH)",
+          "source_name": "FMP fundamentals (HIMS)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -791,76 +825,8 @@
       ]
     },
     {
-      "ticker": "FIS",
-      "company_name": "Fidelity National Information Services Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 54% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (FIS)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "CHTR",
-      "company_name": "Charter Communications Inc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 70% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 70% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CHTR)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "FLUT",
-      "company_name": "Flutter Entertainment Plc",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 69% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 69% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (FLUT)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "TSCO",
-      "company_name": "Tractor Supply Co",
-      "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 53% from its 52-wk high",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Possible forced selling: down 53% from its 52-wk high",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TSCO)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "OWL",
-      "company_name": "Blue Owl Capital Inc",
+      "ticker": "SNAP",
+      "company_name": "Snap Inc",
       "scout": "special_situations",
       "one_line_reason": "Possible forced selling: down 56% from its 52-wk high",
       "theme": null,
@@ -868,7 +834,7 @@
         {
           "claim": "Possible forced selling: down 56% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (OWL)",
+          "source_name": "FMP fundamentals (SNAP)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -876,16 +842,16 @@
       ]
     },
     {
-      "ticker": "TOST",
-      "company_name": "Toast Inc",
+      "ticker": "SFM",
+      "company_name": "Sprouts Farmers Market Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 51% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 54% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 51% from its 52-wk high",
+          "claim": "Possible forced selling: down 54% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TOST)",
+          "source_name": "FMP fundamentals (SFM)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -893,16 +859,16 @@
       ]
     },
     {
-      "ticker": "CSGP",
-      "company_name": "Costar Group Inc",
+      "ticker": "AVAV",
+      "company_name": "AeroVironment Inc",
       "scout": "special_situations",
-      "one_line_reason": "Possible forced selling: down 70% from its 52-wk high",
+      "one_line_reason": "Possible forced selling: down 64% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Possible forced selling: down 70% from its 52-wk high",
+          "claim": "Possible forced selling: down 64% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CSGP)",
+          "source_name": "FMP fundamentals (AVAV)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -910,16 +876,16 @@
       ]
     },
     {
-      "ticker": "SPCX",
-      "company_name": "Space Exploration Technologies Corp",
-      "scout": "contrarian",
-      "one_line_reason": "Down 31% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
+      "ticker": "CELH",
+      "company_name": "Celsius Holdings Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 56% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 31% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
+          "claim": "Possible forced selling: down 56% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (SPCX)",
+          "source_name": "FMP fundamentals (CELH)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -927,16 +893,16 @@
       ]
     },
     {
-      "ticker": "ORCL",
-      "company_name": "Oracle Corp",
-      "scout": "contrarian",
-      "one_line_reason": "Down 49% from its 52-wk high while still growing revenue 11%",
+      "ticker": "RGTI",
+      "company_name": "Rigetti Computing Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 63% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 49% from its 52-wk high while still growing revenue 11%",
+          "claim": "Possible forced selling: down 63% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ORCL)",
+          "source_name": "FMP fundamentals (RGTI)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -944,16 +910,16 @@
       ]
     },
     {
-      "ticker": "PLTR",
-      "company_name": "Palantir Technologies Inc",
-      "scout": "contrarian",
-      "one_line_reason": "Down 42% from its 52-wk high while still growing revenue 33%",
+      "ticker": "ZG",
+      "company_name": "Zillow Group Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 66% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 42% from its 52-wk high while still growing revenue 33%",
+          "claim": "Possible forced selling: down 66% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (PLTR)",
+          "source_name": "FMP fundamentals (ZG)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -961,16 +927,16 @@
       ]
     },
     {
-      "ticker": "TMUS",
-      "company_name": "T-Mobile US Inc",
-      "scout": "contrarian",
-      "one_line_reason": "Down 31% from its 52-wk high while still growing revenue 5%",
+      "ticker": "Z",
+      "company_name": "Zillow Group Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 68% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 31% from its 52-wk high while still growing revenue 5%",
+          "claim": "Possible forced selling: down 68% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (TMUS)",
+          "source_name": "FMP fundamentals (Z)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -978,16 +944,16 @@
       ]
     },
     {
-      "ticker": "APP",
-      "company_name": "Applovin Corp",
-      "scout": "contrarian",
-      "one_line_reason": "Down 37% from its 52-wk high while still growing revenue 30%",
+      "ticker": "CAR",
+      "company_name": "Avis Budget Group Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 78% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 37% from its 52-wk high while still growing revenue 30%",
+          "claim": "Possible forced selling: down 78% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (APP)",
+          "source_name": "FMP fundamentals (CAR)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -995,16 +961,16 @@
       ]
     },
     {
-      "ticker": "ABT",
-      "company_name": "Abbott Laboratories",
-      "scout": "contrarian",
-      "one_line_reason": "Down 37% from its 52-wk high while still growing revenue 5%",
+      "ticker": "CHYM",
+      "company_name": "Chime Financial Inc",
+      "scout": "special_situations",
+      "one_line_reason": "Possible forced selling: down 56% from its 52-wk high",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 37% from its 52-wk high while still growing revenue 5%",
+          "claim": "Possible forced selling: down 56% from its 52-wk high",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ABT)",
+          "source_name": "FMP fundamentals (CHYM)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1012,16 +978,16 @@
       ]
     },
     {
-      "ticker": "ISRG",
-      "company_name": "Intuitive Surgical Inc",
+      "ticker": "WLK",
+      "company_name": "Westlake Corp",
       "scout": "contrarian",
-      "one_line_reason": "Down 33% from its 52-wk high while still growing revenue 18%",
+      "one_line_reason": "Down 37% from its 52-wk high while still growing revenue 8%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 33% from its 52-wk high while still growing revenue 18%",
+          "claim": "Down 37% from its 52-wk high while still growing revenue 8%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ISRG)",
+          "source_name": "FMP fundamentals (WLK)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1029,16 +995,16 @@
       ]
     },
     {
-      "ticker": "CRM",
-      "company_name": "Salesforce Inc",
+      "ticker": "CACI",
+      "company_name": "Caci International Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 46% from its 52-wk high while still growing revenue 14%",
+      "one_line_reason": "Down 34% from its 52-wk high while still growing revenue 9%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 46% from its 52-wk high while still growing revenue 14%",
+          "claim": "Down 34% from its 52-wk high while still growing revenue 9%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CRM)",
+          "source_name": "FMP fundamentals (CACI)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1046,16 +1012,16 @@
       ]
     },
     {
-      "ticker": "CEG",
-      "company_name": "Constellation Energy Corp",
+      "ticker": "DPZ",
+      "company_name": "Dominos Pizza Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 33% from its 52-wk high while still growing revenue 9%",
+      "one_line_reason": "Down 41% from its 52-wk high while still growing revenue 4%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 33% from its 52-wk high while still growing revenue 9%",
+          "claim": "Down 41% from its 52-wk high while still growing revenue 4%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CEG)",
+          "source_name": "FMP fundamentals (DPZ)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1063,16 +1029,16 @@
       ]
     },
     {
-      "ticker": "HOOD",
-      "company_name": "Robinhood Markets Inc",
+      "ticker": "ARE",
+      "company_name": "Alexandria Real Estate Equities Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 31% from its 52-wk high while still growing revenue 36%",
+      "one_line_reason": "Down 43% from its 52-wk high while still growing revenue 10%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 31% from its 52-wk high while still growing revenue 36%",
+          "claim": "Down 43% from its 52-wk high while still growing revenue 10%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (HOOD)",
+          "source_name": "FMP fundamentals (ARE)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1080,16 +1046,16 @@
       ]
     },
     {
-      "ticker": "KKR",
-      "company_name": "KKR & Co Inc",
+      "ticker": "JKHY",
+      "company_name": "Jack Henry & Associates Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 37% from its 52-wk high while still growing revenue 36%",
+      "one_line_reason": "Down 36% from its 52-wk high while still growing revenue 7%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 37% from its 52-wk high while still growing revenue 36%",
+          "claim": "Down 36% from its 52-wk high while still growing revenue 7%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (KKR)",
+          "source_name": "FMP fundamentals (JKHY)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1097,16 +1063,16 @@
       ]
     },
     {
-      "ticker": "ADP",
-      "company_name": "Automatic Data Processing Inc",
+      "ticker": "ACM",
+      "company_name": "AECOM",
       "scout": "contrarian",
-      "one_line_reason": "Down 32% from its 52-wk high while still growing revenue 7%",
+      "one_line_reason": "Down 50% from its 52-wk high while still growing revenue 4%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 32% from its 52-wk high while still growing revenue 7%",
+          "claim": "Down 50% from its 52-wk high while still growing revenue 4%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ADP)",
+          "source_name": "FMP fundamentals (ACM)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1114,16 +1080,16 @@
       ]
     },
     {
-      "ticker": "HCA",
-      "company_name": "HCA Healthcare Inc",
+      "ticker": "BLDR",
+      "company_name": "Builders Firstsource Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 32% from its 52-wk high while still growing revenue 8%",
+      "one_line_reason": "Down 49% from its 52-wk high while still growing revenue 12%",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 32% from its 52-wk high while still growing revenue 8%",
+          "claim": "Down 49% from its 52-wk high while still growing revenue 12%",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (HCA)",
+          "source_name": "FMP fundamentals (BLDR)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
@@ -1131,84 +1097,16 @@
       ]
     },
     {
-      "ticker": "CMCSA",
-      "company_name": "Comcast Corp",
+      "ticker": "XE",
+      "company_name": "X-Energy Inc",
       "scout": "contrarian",
-      "one_line_reason": "Down 35% from its 52-wk high while still growing revenue 4%",
+      "one_line_reason": "Down 46% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
       "theme": null,
       "evidence": [
         {
-          "claim": "Down 35% from its 52-wk high while still growing revenue 4%",
+          "claim": "Down 46% from its 52-wk high (growth unverified \u2014 fundamentals gated)",
           "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CMCSA)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "DASH",
-      "company_name": "DoorDash Inc",
-      "scout": "contrarian",
-      "one_line_reason": "Down 40% from its 52-wk high while still growing revenue 37%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Down 40% from its 52-wk high while still growing revenue 37%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (DASH)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "ICE",
-      "company_name": "Intercontinental Exchange Inc",
-      "scout": "contrarian",
-      "one_line_reason": "Down 31% from its 52-wk high while still growing revenue 10%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Down 31% from its 52-wk high while still growing revenue 10%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (ICE)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "CVNA",
-      "company_name": "Carvana Co",
-      "scout": "contrarian",
-      "one_line_reason": "Down 32% from its 52-wk high while still growing revenue 29%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Down 32% from its 52-wk high while still growing revenue 29%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (CVNA)",
-          "source_date": "2026-06-23",
-          "url": null,
-          "excerpt": null
-        }
-      ]
-    },
-    {
-      "ticker": "NOC",
-      "company_name": "Northrop Grumman Corp",
-      "scout": "contrarian",
-      "one_line_reason": "Down 34% from its 52-wk high while still growing revenue 3%",
-      "theme": null,
-      "evidence": [
-        {
-          "claim": "Down 34% from its 52-wk high while still growing revenue 3%",
-          "source_type": "fundamental",
-          "source_name": "FMP fundamentals (NOC)",
+          "source_name": "FMP fundamentals (XE)",
           "source_date": "2026-06-23",
           "url": null,
           "excerpt": null
