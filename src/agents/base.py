@@ -36,7 +36,9 @@ class Agent(ABC, Generic[T]):
     #: methodology files to load into the system prompt, e.g. ["oguz_erkan.md", "mbi.md"]
     methodology_files: list[str] = []
     output_schema: type[T]
-    max_tokens: int = 2000
+    # Generous ceiling: the evidence-heavy schemas (quality, red-team) emit long structured JSON;
+    # too low a cap truncates the reply mid-string and breaks JSON parsing.
+    max_tokens: int = 4096
 
     @property
     def model_id(self) -> str:
