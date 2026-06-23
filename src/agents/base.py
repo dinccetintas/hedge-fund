@@ -37,8 +37,9 @@ class Agent(ABC, Generic[T]):
     methodology_files: list[str] = []
     output_schema: type[T]
     # Generous ceiling: the evidence-heavy schemas (quality, red-team) emit long structured JSON;
-    # too low a cap truncates the reply mid-string and breaks JSON parsing.
-    max_tokens: int = 4096
+    # too low a cap truncates the reply mid-string and breaks JSON parsing. 8192 fits the largest
+    # bear-case replies (mega-caps with deep histories) with headroom.
+    max_tokens: int = 8192
 
     @property
     def model_id(self) -> str:
