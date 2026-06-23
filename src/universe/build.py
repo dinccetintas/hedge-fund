@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Any
 
+from ..data.finviz_client import FinvizRow, FinvizScreener
 from ..data.fmp_client import FMPClient
 
 log = logging.getLogger(__name__)
@@ -20,6 +21,10 @@ log = logging.getLogger(__name__)
 US_EXCHANGES = ["NYSE", "NASDAQ", "AMEX"]
 MIN_MARKET_CAP = 50_000_000        # $50M floor
 MIN_AVG_VOLUME = 100_000           # shares/day — a basic tradability floor
+
+# Finviz screener filter: US-listed, small-cap and up, with a basic liquidity floor.
+# (avgvol_o100 == average volume over 100K/day; cap_smallover == market cap over ~$300M.)
+FINVIZ_FILTERS = "cap_smallover,sh_avgvol_o100,geo_usa"
 
 
 @dataclass
@@ -83,3 +88,41 @@ async def build_universe(
 
     log.info("Built universe of %d liquid US names (as_of=%s)", len(universe), as_of or date.today())  # noqa: E501
     return universe
+
+
+def universe_from_finviz(rows: list[FinvizRow]) -> list[UniverseStock]:
+    """Map Finviz screener rows into the liquid US universe (dedup by ticker, keep order)."""
+    seen: set[str] = set()
+    universe: list[UniverseStock] = []
+    for r in rows:
+        if not r.ticker or r.ticker in seen:
+            continue
+        seen.add(r.ticker)
+        universe.append(
+            UniverseStock(
+                ticker=r.ticker,
+                company_name=r.company,
+                market_cap=r.market_cap,
+                sector=r.sector,
+                industry=r.industry,
+                price=r.price,
+                volume=r.volume or r.avg_volume,
+                exchange=None,  # Finviz custom view does not expose the exchange short-name.
+                beta=r.beta,
+            )
+        )
+    return universe
+
+
+async def build_universe_finviz(
+    screener: FinvizScreener,
+    *,
+    as_of: date | None = None,
+    filters: str = FINVIZ_FILTERS,
+    max_rows: int = 1000,
+) -> tuple[list[UniverseStock], list[FinvizRow]]:
+    """Build the universe from Finviz. Returns (universe, raw rows) — rows feed enrichment."""
+    rows = await screener.screen(filters=filters, max_rows=max_rows)
+    universe = universe_from_finviz(rows)
+    log.info("Built Finviz universe of %d names (as_of=%s)", len(universe), as_of or date.today())
+    return universe, rows

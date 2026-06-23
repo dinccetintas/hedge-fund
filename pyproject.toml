@@ -9,17 +9,18 @@ dependencies = [
     # LLM / agents
     "anthropic>=0.40",
     # Data layer
-    "httpx>=0.27",            # async HTTP for FMP / data clients
-    "tenacity>=8.2",          # retries/backoff for flaky APIs
-    "pydantic>=2.6",          # structured-output schemas (scores/IRR/sizing)
+    "httpx>=0.27", # async HTTP for FMP / data clients
+    "tenacity>=8.2", # retries/backoff for flaky APIs
+    "pydantic>=2.6", # structured-output schemas (scores/IRR/sizing)
     "pydantic-settings>=2.2", # env/secrets loading
     "python-dotenv>=1.0",
     # Numerics / valuation (reverse DCF, sizing math)
     "numpy>=1.26",
     "pandas>=2.2",
     # Report generation
-    "jinja2>=3.1",            # markdown briefing templates
-    "rich>=13.7",             # pretty CLI run output
+    "jinja2>=3.1", # markdown briefing templates
+    "rich>=13.7", # pretty CLI run output
+    "lxml>=6.1.1",
 ]
 
 [project.optional-dependencies]

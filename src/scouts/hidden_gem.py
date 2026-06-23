@@ -29,7 +29,8 @@ class HiddenGemScout(Scout):
         # Prefer the larger, more liquid small-caps first for enrichment budget.
         pool.sort(key=lambda s: s.market_cap or 0, reverse=True)
         funds = await enrich_many(
-            ctx.fmp, [s.ticker for s in pool], ctx.as_of, cap=ctx.enrich_cap
+            ctx.fmp, [s.ticker for s in pool], ctx.as_of,
+            cap=ctx.enrich_cap, prefetched=ctx.fundamentals,
         )
 
         out: list[Candidate] = []
