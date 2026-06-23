@@ -78,7 +78,7 @@ async def structured(
         text = await _call_openrouter(model=model, system=sys, user=user, max_tokens=max_tokens)
     else:
         text = await _call_anthropic(model=model, system=sys, user=user, max_tokens=max_tokens)
-    return schema.model_validate_json(_strip_fence(text))
+    return schema.model_validate_json(_extract_json(text))
 
 
 async def _call_anthropic(*, model: str, system: str, user: str, max_tokens: int) -> str:
@@ -118,3 +118,38 @@ def _strip_fence(text: str) -> str:
             text = text.rsplit("```", 1)[0]
         text = text.removeprefix("json\n").removeprefix("json")
     return text.strip()
+
+
+def _extract_json(text: str) -> str:
+    """Return the first balanced top-level JSON object, tolerating leading/trailing prose.
+
+    Smaller/cheaper models sometimes wrap the object in a ```fence``` or trail it with a sentence
+    of commentary; a plain `model_validate_json` then fails on the extra characters. We scan from
+    the first `{` to its matching `}`, ignoring braces inside strings, and validate just that slice.
+    """
+    text = _strip_fence(text)
+    start = text.find("{")
+    if start == -1:
+        return text  # let pydantic raise a clear error on the original payload
+    depth = 0
+    in_str = False
+    escape = False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : i + 1]
+    return text[start:]  # unbalanced (e.g. truncated) — surface the original parse error
