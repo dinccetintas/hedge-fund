@@ -72,7 +72,9 @@ async def structured(
     """
     sys = (
         f"{system}\n\nReturn ONLY a JSON object matching this schema (no prose, no markdown):\n"
-        f"{json.dumps(schema.model_json_schema())}"
+        f"{json.dumps(schema.model_json_schema())}\n\n"
+        "Be concise so the reply fits in one response: keep every string value under ~280 "
+        "characters and include at most the 5 most important items in any array. Do not pad."
     )
     if settings.llm_provider == "openrouter":
         text = await _call_openrouter(model=model, system=sys, user=user, max_tokens=max_tokens)
