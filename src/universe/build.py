@@ -22,9 +22,11 @@ US_EXCHANGES = ["NYSE", "NASDAQ", "AMEX"]
 MIN_MARKET_CAP = 50_000_000        # $50M floor
 MIN_AVG_VOLUME = 100_000           # shares/day — a basic tradability floor
 
-# Finviz screener filter: US-listed, small-cap and up, with a basic liquidity floor.
-# (avgvol_o100 == average volume over 100K/day; cap_smallover == market cap over ~$300M.)
-FINVIZ_FILTERS = "cap_smallover,sh_avgvol_o100,geo_usa"
+# Finviz screener filter: US-listed, mid-cap and *under* (≤ ~$10B), with a basic liquidity floor.
+# The system's edge is in under-covered small/mid-caps; mega/large-caps are efficiently priced and
+# get (correctly) rejected at the behavioral edge gate, so we exclude them at the source.
+# (avgvol_o100 == average volume over 100K/day; cap_midunder == market cap ≤ ~$10B.)
+FINVIZ_FILTERS = "cap_midunder,sh_avgvol_o100,geo_usa"
 
 
 @dataclass

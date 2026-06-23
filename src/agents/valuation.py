@@ -39,4 +39,8 @@ class ValuationAgent(Agent[Valuation]):
             f"Quality Score: {quality.quality_score}/10; ROIC: {quality.roic}\n\n"
             f"{data.to_prompt()}\n\nValue this business and give a buy-below price."
         )
-        return await self._complete(system, user)
+        result = await self._complete(system, user)
+        # current_price is known data — trust the price feed over the model's echo of it.
+        if data.current_price is not None:
+            result.current_price = data.current_price
+        return result

@@ -96,8 +96,12 @@ class QualityAssessment(BaseModel):
 # Stage 3 — Valuation
 # --------------------------------------------------------------------------------------------- #
 class Valuation(BaseModel):
-    current_price: float
-    buy_below_price: float = Field(description="Price under which the asymmetry is attractive.")
+    # Known data — the agent injects it from the price feed, so the model need not emit it.
+    current_price: float | None = None
+    # None when the model judges there's no price offering an adequate margin of safety.
+    buy_below_price: float | None = Field(
+        default=None, description="Price under which the asymmetry is attractive."
+    )
     intrinsic_value: float | None = None
     margin_of_safety: float | None = Field(
         default=None, description="(intrinsic − price)/intrinsic."

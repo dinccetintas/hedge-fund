@@ -59,7 +59,11 @@ async def _full() -> None:
     table.add_column("Thesis", overflow="fold")
     for n, i in enumerate(briefing.ideas, 1):
         conv = f"{i.sizing.conviction:g}" if i.sizing else "—"
-        bb = f"{i.valuation.buy_below_price:,.2f}" if i.valuation else "—"
+        bb = (
+            f"{i.valuation.buy_below_price:,.2f}"
+            if i.valuation and i.valuation.buy_below_price is not None
+            else "—"
+        )
         table.add_row(str(n), i.ticker, conv, bb, i.thesis_one_line)
     console.print(table)
     console.print(f"\nBriefing → [green]reports/{briefing.run_date.isoformat()}.md[/]"
